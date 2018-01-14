@@ -1,4 +1,4 @@
-Role Name
+Ansible SSH Container
 =========
 
 This role will create an Ubuntu docker image with openssh package installed.
