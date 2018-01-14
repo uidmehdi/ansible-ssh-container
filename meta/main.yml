@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Mehdi Hassanpour
+  description: Ansible Role
+  company: 
+
+  license: license (GPLv2)
+
+  min_ansible_version: 2.2 
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - 16.04
+
+  galaxy_tags:
+  - container
+  - ssh
+  - ubuntu 
+  - docker
+
+dependencies: []

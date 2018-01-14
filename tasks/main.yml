@@ -1,0 +1,24 @@
+---
+# ansible playbook for ssh-container role and image
+
+- name: create base directory for ansible
+  file:
+    path: "{{ base_dir }}"
+    state: directory
+
+- name: copy ssh keys
+  command: cp {{ pubkey_dir }}/{{ item }} {{ base_dir }}
+  with_items:
+    - id_rsa.pub
+
+- name: copy dockerfile
+  template:
+    src: Dockerfile
+    dest: "{{ base_dir }}/Dockerfile"
+
+- name: create ubuntu docker image
+  docker_image: 
+    path: "{{ base_dir }}" 
+    name: "uidmehdi/sshubuimg" 
+    tag: "ubuntu1604"
+    state: present
